@@ -2,6 +2,7 @@ import React from 'react';
 import './recipe.css';
 
 const Recipe = ({title, calories, image, ingredients}) => {
+  calories=Math.round(parseInt(calories))
   return(
     <div className='recipe'>
       <h1>{title}</h1>
@@ -10,7 +11,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
           <li>{ingredient.text}</li>
         ))}
       </ol>
-      <p>{calories}</p>
+      <p>{calories} Cal</p>
       <img className='image' src={image} alt={title}/>
     </div>
   )
